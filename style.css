@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Poppins', serif;
+  @apply text-font;
+}
+
+@keyframes strong-word-appear {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes mobile-badges-appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes sub-text-appear {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+#hero-find {
+  animation: 0.2s linear 0s strong-word-appear;
+  animation-fill-mode: both;
+}
+
+#hero-book {
+  animation: 0.2s linear 0.35s strong-word-appear;
+  animation-fill-mode: both;
+}
+
+#hero-rent {
+  animation: 0.2s linear 0.7s strong-word-appear;
+  animation-fill-mode: both;
+}
+
+#hero-subtext {
+  animation: 0.8s ease-out 0.7s sub-text-appear;
+  animation-fill-mode: both;
+}
+
+mobile-badges.animate-reveal {
+  animation: 0.5s ease-in-out 1.1s mobile-badges-appear;
+  animation-fill-mode: both;
+}
+
+@keyframes rent-step-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(75%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-anim > rent-step {
+  opacity: 0;
+}
+.scroll-anim.active > rent-step {
+  animation: 0.4s ease-out 0s rent-step-reveal;
+  animation-fill-mode: forwards;
+}
+.scroll-anim.active > rent-step:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.scroll-anim.active > rent-step:nth-child(3) {
+  animation-delay: 0.30s;
+}
+
+@keyframes offer-detail-reveal {
+  from {
+    opacity: 0;
+    transform: translateX(33%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.scroll-anim > offer-detail {
+  opacity: 0;
+}
+.scroll-anim.active > offer-detail {
+  animation: 0.25s ease-out 0s offer-detail-reveal;
+  animation-fill-mode: forwards;
+}
+.scroll-anim.active > offer-detail:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.scroll-anim.active > offer-detail:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.scroll-anim.active > offer-detail:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.h-testimonials {
+  @apply h-96;
+}
+
+@keyframes move-testimonials {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--testimonials-gap)));
+  }
+}
+
+.gap-testimonials {
+  --testimonials-gap: 2.5rem;
+  gap: var(--testimonials-gap);
+}
+
+.testimonials-carousel {
+  animation: 30s linear 0s move-testimonials infinite;
+}
+
+@keyframes carousel-move-up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes carousel-move-up-absolute {
+  from {
+    top: 100%;
+  }
+  to {
+    top: 0;
+  }
+}
+
+#carousel-imgs > img.carousel-switch {
+  animation: 0.5s ease-in-out 0s carousel-move-up;
+}
+
+#carousel-contents > carousel-content.carousel-switch {
+  animation: 0.5s ease-in-out 0s carousel-move-up-absolute;
+}
+
+#carousel-prices > span.carousel-switch {
+  animation: 0.5s ease-in-out 0s carousel-move-up;
+}

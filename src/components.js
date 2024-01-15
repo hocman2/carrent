@@ -1,0 +1,11 @@
+import './components/mobile-badges.js';
+import './components/logo.js';
+import './components/booking-widget.js';
+import './components/section-title.js';
+import './components/section-title-inverted.js';
+import './components/rent-step.js';
+import './components/offer-detail.js';
+import './components/testimonial.js';
+import './components/carousel-title.js';
+import './components/carousel-specs.js';
+import './components/carousel-content.js';
